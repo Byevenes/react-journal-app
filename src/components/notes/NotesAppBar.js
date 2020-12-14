@@ -1,10 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import moment from 'moment';
 import { useDispatch, useSelector } from 'react-redux';
 import { startSaveNote, startUpLoading } from '../../actions/notesAction';
 
 export const NotesAppBar = () => {
   const dispatch = useDispatch();
   const { active } = useSelector((state) => state.notes);
+
+  const datenow = Date.now();
+  const momentDate = moment(datenow);
 
   const handleSave = () => {
     dispatch(startSaveNote(active));
@@ -24,7 +29,7 @@ export const NotesAppBar = () => {
 
   return (
     <div className="notes__appbar">
-      <span>28 de agosto 2020</span>
+      <span>{momentDate.format('DD-MM-YYYY')}</span>
 
       <input
         id="fileSelector"
@@ -45,4 +50,8 @@ export const NotesAppBar = () => {
       </div>
     </div>
   );
+};
+
+NotesAppBar.propTypes = {
+  active: PropTypes.bool,
 };

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { startLogout } from '../../actions/authAction';
 import { startNewNote } from '../../actions/notesAction';
@@ -37,4 +38,8 @@ export const Sidebar = () => {
       <JournalEntries />
     </aside>
   );
+};
+
+Sidebar.propTypes = {
+  name: PropTypes.string,
 };

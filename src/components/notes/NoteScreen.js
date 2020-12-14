@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { activeNote, startDeleting } from '../../actions/notesAction';
 import { useForm } from '../../hooks/useForm';
@@ -70,4 +71,10 @@ export const NoteScreen = () => {
       </button>
     </div>
   );
+};
+
+NoteScreen.propTypes = {
+  id: PropTypes.string,
+  title: PropTypes.string,
+  body: PropTypes.string,
 };

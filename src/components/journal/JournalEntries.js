@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import { JournalEntry } from './JournalEntry';
 
@@ -12,4 +13,8 @@ export const JournalEntries = () => {
       })}
     </div>
   );
+};
+
+JournalEntries.propTypes = {
+  notes: PropTypes.array,
 };

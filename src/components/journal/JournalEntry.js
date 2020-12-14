@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import moment from 'moment';
 import { useDispatch } from 'react-redux';
 import { activeNote } from '../../actions/notesAction';
@@ -37,4 +38,12 @@ export const JournalEntry = ({ id, date, title, body, url }) => {
       </div>
     </div>
   );
+};
+
+JournalEntry.propTypes = {
+  id: PropTypes.string.isRequired,
+  date: PropTypes.number.isRequired,
+  title: PropTypes.string,
+  body: PropTypes.string,
+  url: PropTypes.string,
 };

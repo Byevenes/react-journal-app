@@ -8,7 +8,7 @@ exports[`Pruebas en <NoteScreen /> debe de mostrarse correctamente 1`] = `
     className="notes__appbar"
   >
     <span>
-      28 de agosto 2020
+      14-12-2020
     </span>
     <input
       id="fileSelector"

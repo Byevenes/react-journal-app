@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import { NoteScreen } from '../notes/NoteScreen';
 import { NothingSelected } from './NothingSelected';
@@ -14,4 +15,8 @@ export const JournalScreen = () => {
       <main>{active ? <NoteScreen /> : <NothingSelected />}</main>
     </div>
   );
+};
+
+JournalScreen.propTypes = {
+  active: PropTypes.bool,
 };
